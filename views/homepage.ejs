@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ./partials/head %>
+    <% if (username == false ) { %>
+        <script src="javascripts/login.js"></script>
+    <% } %>
+</head>
+
+<body>
+    <div class="header">
+        <% include ./partials/home %>
+    </div>
+    <div class="content" id="home">
+        <% if (username == false ) { %>
+            <% include ./partials/login %>
+        <% } %>
+    </div>
+    <div class="footer">
+        <% include ./partials/footer %>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+
+<center>
+<h2 class="intro-text text-center">Ready to create your universal profiles?</h2>
+<p><strong>Log in or register to begin</p>
+
+<div class = "ui grid">
+    <div class="seven wide centered column">
+        <form id="login" class="ui form">
+      <h4 class="ui dividing header">LOG IN</h4>
+      <div class="inline field">
+        <label>Username: </label>
+        <input type="text" class="form-control" id="username" placeholder="Username">
+      </div>
+      <div class="inline field">
+        <label>Password: </label>
+        <input type="password" class="form-control" id="password" placeholder="Password">
+      </div>
+      <div class = "ui button" onclick=toggle("register")><i class="edit icon"></i>Register</div>
+      <button class="ui icon button" type="submit"><i class="chevron circle right icon"></i></button>
+    </form>
+
+    <form id="register" class="ui form">
+      <h4 class="ui dividing header">REGISTER HERE</h4>
+      <div class="field">
+        <label>Name</label>
+        <div class="two fields">
+            <div class="field">
+                <input type="text" name="shipping[first-name]" id = firstname placeholder="First Name">
+            </div>
+            <div class="field">
+                <input type="text" name="shipping[last-name]" id = lastname placeholder="Last Name">
+            </div>
+        </div>
+      </div>
+      <div class="field">
+        <label>Email</label>
+        <input type="text" class="form-control" id="email" placeholder="Your Email">
+      </div>
+      <div class="field">
+        <label>User Account</label>
+        <div class="two fields">
+            <div class="field">
+                <input type="text" name="shipping[username]" id = username placeholder="Username">
+            </div>
+            <div class="field">
+                <input type="password" name="shipping[password]" id = password placeholder="Password">
+            </div>
+        </div>
+      </div>
+      <div class = "ui button" onclick=toggle("signin")><i class="sign in icon"></i>Log In</div>
+      <button class="ui icon button" type="submit"><i class="chevron circle right icon"></i></button>
+    </form>
+    </div>
+</div>
+<p>
+<p>
+</center>
