@@ -41,6 +41,21 @@ $(document).ready(function() {
         console.log("Successfully added user to system!");
       }
     });
+
+    $.ajax({
+      url: './profiles',
+      type: 'PUT',
+      data:{username:user_name, 
+            type:"personal", 
+            content:[
+              {field:"fname", info:first_name},
+              {field:"lname", info:last_name},
+              {field:"email", info:user_email}]
+            },
+      success: function(result) {
+        console.log("successfully added profile to system!");
+      }
+    });
     event.preventDefault();
   }
 
