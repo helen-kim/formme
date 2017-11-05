@@ -123,7 +123,7 @@ doRetrieve = function(req, res){
    *    model once the retrieve has been successful.
    * modelData is an array of objects returned as a result osf the Retrieve
    */
-  if (req.params.collection == "lists") {
+  if (req.params.collection == "profiles") {
     /* add current user in session as attribute to search for in document */
     req.query.username = req.session.user;
   }
@@ -138,12 +138,20 @@ doRetrieve = function(req, res){
           res.render('user_results',{obj: modelData});
         }
         else if (req.params.collection == "lists") {
-
+          // console.log(modelData[0].type);
+          console.log(modelData);
+          res.render('results',{obj: modelData});
+        }
+        else if (req.params.collection == "profiles") {
+          // console.log(modelData[0].type);
+          console.log("current user: "+req.query.username);
+          console.log("looking for profiles");
+          console.log(modelData);
           res.render('results',{obj: modelData});
         }
       } 
       else {
-        var message = "No search results found. Please try again!";
+        var message = "No profiles found. Please try again!";
         res.render('message', {title: 'Restaurant Demo', obj: message});
       }
   });

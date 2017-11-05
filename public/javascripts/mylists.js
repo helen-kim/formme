@@ -7,7 +7,7 @@ function showLists() {
 
   // find all restaurants that has the same username
   $.ajax({
-            url: './lists',
+            url: './profiles',
             type: 'GET',
             data: {},
             success:function(result){
