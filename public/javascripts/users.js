@@ -16,7 +16,7 @@ $(document).ready(function() {
           $('#error').html("<p>Incorrect username or password. Please try again!</p>");
         }
         console.log("Successfully found user!");
-        window.location.href='/search';
+        window.location.href='/mylists';
       },
       error: function(response, status) {
         alert("Incorrect username or password. Please try again!");
@@ -71,7 +71,7 @@ $(document).ready(function() {
           $('#error').html("<p>Incorrect username or password. Please try again!</p>");
         }
         console.log("Successfully found user!");
-        window.location.href='/search';
+        window.location.href='/mylists';
       },
       error: function(response, status) {
         alert("Incorrect username or password. Please try again!");
