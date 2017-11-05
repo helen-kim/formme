@@ -1,7 +1,7 @@
 {
-  "name": "DestinationEats",
+  "name": "FormMe",
   "version": "1.0.0",
-  "description": "Create restaurant lists for easy itinerary management when you're traveling.",
+  "description": "Create your own universal profile.",
   "keywords": [
     "OpenShift",
     "Node.js",
