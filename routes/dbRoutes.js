@@ -146,7 +146,7 @@ doRetrieve = function(req, res){
           // console.log(modelData[0].type);
           console.log("current user: "+req.query.username);
           console.log("looking for profiles");
-          console.log(modelData);
+          console.log(modelData[0].content);
           res.render('results',{obj: modelData});
         }
       } 

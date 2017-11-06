@@ -1,8 +1,18 @@
-<div class="ui accordion">
+<div class="ui cards" id="restCards">
   <% for (var i in obj) { %>
-    <div class="title">
-      <i class="dropdown icon"></i>
-      <%= obj[i].type %>
+    <% var profile = obj[i]; %>
+    <div class="ui centered card">
+      <div class="content">
+        <a class="header"><%= profile.type %></a>
+        <div class="description">
+          <% for (var j in profile.content) { %>
+            <div>
+              <h5><%= profile.content[j].field %>: </h5><%= profile.content[j].info %>
+            </div>
+            <br/>
+          <% } %>
+        </div>
+      </div>
     </div>
   <% } %>
 </div>
