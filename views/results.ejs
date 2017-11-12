@@ -13,6 +13,13 @@
           <% } %>
         </div>
       </div>
+      <% if (obj.length > 1) { %>
+        <div class="extra content">
+          <div class='ui red button' id='del' onclick="delProfile('<%= profile.type %>')">
+              <i class='remove icon'></i>Remove
+          </div>
+        </div>
+      <% } %>
     </div>
   <% } %>
 </div>

@@ -197,7 +197,7 @@ doUpdate = function(req, res){
  */
 
 doDelete = function(req, res) {
-  if (req.params.collection == "lists") {
+  if (req.params.collection == "profiles") {
     /* add current user in session as attribute to in document */
     req.body.username = req.session.user;
     console.log(req.body);
@@ -207,7 +207,7 @@ doDelete = function(req, res) {
                       function(result) {
                         // result equal to true means delete was successful
                         var success = (result ? "Delete successful" : "Delete unsuccessful");
-                        res.render('message', {title: 'Restaurant Demo', obj: success});
+                        res.render('message', {title: 'Formme Demo', obj: success});
                       });
 }
 
