@@ -9,11 +9,13 @@ exports.init = function(app) {
   app.get('/home', homepage); // Can be accessed by another url
   app.get('/logout', logout); // Log out user and end session
   app.get('/search', search); // The search page
-  app.get('/mylists', mylists); // My restaurant lists page
+  app.get('/userprofile', userprofile);
+
+  app.get('/mylists', mylists); // CRUD Retrieve ALL 
  
   // The collection parameter maps directly to the mongoDB collection
   app.put('/:collection', doCreate); // CRUD Create
-  app.get('/:collection', doRetrieve); // CRUD Retrieve
+  app.get('/:collection', doRetrieve); // CRUD Retrieve 
   app.post('/:collection', doUpdate); // CRUD Update
   app.delete('/:collection', doDelete); // CRUD Delete
 }
@@ -21,9 +23,6 @@ exports.init = function(app) {
 //------------------------------ROUTE CALLS FOR STATIC PAGES-------------------------------------------
 
 // Model test:  display instructions for use
-test = function(req, res) {
-  res.render('help', {title: 'Restaurant Model Test'})
-};
 
 homepage = function(req, res) {
   if ( req.session.user == undefined) {
@@ -127,6 +126,7 @@ doRetrieve = function(req, res){
     /* add current user in session as attribute to search for in document */
     req.query.username = req.session.user;
   }
+  console.log("type" in req.query);
   mongoModel.retrieve(
     req.params.collection, 
     req.query,
@@ -144,15 +144,34 @@ doRetrieve = function(req, res){
         }
         else if (req.params.collection == "profiles") {
           // console.log(modelData[0].type);
-          console.log("current user: "+req.query.username);
-          console.log("looking for profiles");
-          console.log(modelData[0].content);
-          res.render('results',{obj: modelData});
+          if ("type" in req.query) {
+            res.render('userprofile', {obj: modelData});
+          }
+          else {
+            res.render('results',{obj: modelData});
+          }
+          // console.log("current user: "+req.query.username);
+          // console.log("looking for profiles");
+          // console.log(modelData[0].content);
+          // res.render('results',{obj: modelData});
         }
       } 
-      else {
-        var message = "No profiles found. Please try again!";
-        res.render('message', {title: 'Restaurant Demo', obj: message});
+      // else {
+      //   var message = "No profiles found. Please try again!";
+      //   res.render('message', {title: 'Restaurant Demo', obj: message});
+      // }
+  });
+}
+
+userprofile = function(req, res) {
+  req.query.username = req.session.user;
+
+  mongoModel.retrieve(
+    req.params.collection, 
+    req.query,
+    function(modelData) {
+      if (modelData.length) {
+        res.render('userprofile');
       }
   });
 }

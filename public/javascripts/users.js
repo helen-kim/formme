@@ -46,7 +46,7 @@ $(document).ready(function() {
       url: './profiles',
       type: 'PUT',
       data:{username:user_name, 
-            type:"personal", 
+            type:"Personal", 
             content:[
               {field:"fname", info:first_name},
               {field:"lname", info:last_name},

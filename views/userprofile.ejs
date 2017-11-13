@@ -1,0 +1,28 @@
+<div class = "profileinfo">
+  <% for (var i in obj) { %>
+    <% var profile = obj[i]; %>
+      <div class="content">
+        <% var type = profile.type %>
+        <h2><%= type %></h2>
+        <div class="description">
+          <table class="ui very basic collapsing table">
+			  <tbody>
+			    <% for (var k in profile.content) { %>
+			      <tr>
+			      	<td><h4><%= profile.content[k].field %></h4></td>
+			      	<td><%= profile.content[k].info %></td>
+			      	<td><button class="ui tiny yellow icon button">
+			  				<i class="edit icon"></i>
+						</button>
+			      		<button class="ui tiny red icon button">
+			  				<i class="remove icon"></i>
+						</button>
+					</td>
+			      </tr>
+			    <% } %>
+			  </tbody>
+			</table>
+        </div>
+    </div>
+  <% } %>	
+</div>

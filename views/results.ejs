@@ -3,9 +3,10 @@
     <% var profile = obj[i]; %>
     <div class="ui centered card">
       <div class="content">
-        <a class="header"><%= profile.type %></a>
+        <% var type = profile.type %>
+        <a class="header" onclick="showprofile('<%= type %>')"><%= type %></a>
         <div class="description">
-          <% for (var j in profile.content) { %>
+          <% for (var j=0; j < 3;j++) { %>
             <div>
               <h5><%= profile.content[j].field %>: </h5><%= profile.content[j].info %>
             </div>
@@ -15,7 +16,7 @@
       </div>
       <% if (obj.length > 1) { %>
         <div class="extra content">
-          <div class='ui red button' id='del' onclick="delProfile('<%= profile.type %>')">
+          <div class='ui red button' id='del' onclick="delProfile('<%= type %>')">
               <i class='remove icon'></i>Remove
           </div>
         </div>
