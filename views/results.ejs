@@ -14,13 +14,16 @@
           <% } %>
         </div>
       </div>
-      <% if (obj.length > 1) { %>
-        <div class="extra content">
-          <div class='ui red button' id='del' onclick="delProfile('<%= type %>')">
-              <i class='remove icon'></i>Remove
-          </div>
+      <div class="extra content">
+        <div class='ui two buttons'>
+          <div class='ui bottom attached teal button' onclick=""><i class='qrcode icon'></i>QR Code</div>
+          <% if (obj.length > 1) { %>
+            <div class='ui bottom attached red button' id='del' onclick="delProfile('<%= type %>')">
+                <i class='remove icon'></i>Remove
+            </div>
+          <% } %>
         </div>
-      <% } %>
+      </div>
     </div>
   <% } %>
 </div>
