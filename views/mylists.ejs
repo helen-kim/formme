@@ -25,13 +25,16 @@
 	    <center>
       <div id="main">
         <h1>My Profiles</h1>
-        <div class='ui green button' id='newprofile' onclick="">
+        <div class='ui green button' id='newprofile' onclick="toggleNewProfile()">
           <i class='add icon'></i>Add New Profile
         </div>
       </div>
       <br/>
 			<div id="lists">
 			</div>
+      <div id="newProfileForm">
+        <% include ./addNewProfileForm %>
+      </div>
 		</center>
 	</div>
     <div class="footer">

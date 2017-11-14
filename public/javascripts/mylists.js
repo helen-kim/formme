@@ -1,5 +1,6 @@
 $(document).ready(function() {
   showLists();
+  $('#newProfileForm').hide();
 });
 
 function showLists() {
@@ -58,4 +59,11 @@ function showmodal(type) {
   $('#'+type+'.ui.modal')
     .modal('show')
   ;
+}
+
+function toggleNewProfile() {
+  console.log("toggle new profile form");
+  $('#lists').hide();
+  $('#main').hide();
+  $('#newProfileForm').show();
 }
