@@ -44,6 +44,7 @@ function showprofile(type) {
             success:function(result) {
               console.log("Successfully retrieved profile");
                 $('#lists').empty();
+                $('#main').empty();
                 $('#lists').html(result);
             }
         });
