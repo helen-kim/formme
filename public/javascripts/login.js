@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $("#login").hide();
+  $("#register").hide();
 })
 
 function toggle(action) {
