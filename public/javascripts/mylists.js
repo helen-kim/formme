@@ -52,3 +52,9 @@ function showprofile(type) {
 function updateprofileinfo() {
   console.log("pressed");
 }
+
+function showmodal(type) {
+  $('#'+type+'.ui.modal')
+    .modal('show')
+  ;
+}
