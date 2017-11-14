@@ -37,25 +37,36 @@ $(document).ready(function() {
       data: { firstname: first_name, lastname: last_name, email: user_email, 
         username: user_name, password: user_password },
       success: function(result) {
-        loginfromregistration(user_name, user_password);
+        createprofile(user_name, first_name, last_name, user_email);
+        loginfromregistration(user_name, user_password)
         console.log("Successfully added user to system!");
       }
     });
 
+    event.preventDefault();
+  }
+
+  function createprofile(user_name, first_name, last_name, user_email, user_password) {
+    var first_name = first_name;
+    var last_name = last_name;
+    var user_email = user_email;
+    var user_name = user_name;
     $.ajax({
       url: './profiles',
       type: 'PUT',
-      data:{username:user_name, 
+      data:{username: user_name, 
             type:"Personal", 
             content:[
-              {field:"fname", info:first_name},
-              {field:"lname", info:last_name},
-              {field:"email", info:user_email}]
+              {field:"fname", info: first_name},
+              {field:"lname", info: last_name},
+              {field:"email", info: user_email}]
             },
       success: function(result) {
+        // loginfromregistration(user_name, user_password);
         console.log("successfully added profile to system!");
       }
     });
+
     event.preventDefault();
   }
 
