@@ -1,3 +1,40 @@
 <script src="javascripts/addNewProfileForm.js"></script>
 
-for adding new profiles
+<div class = "ui grid">
+    <div class="seven wide centered column">
+    	<center>
+    		<h2 class="intro-text">Add a New Profile</h2>
+    	</center>
+		</br>
+	    <form id="profile" class="ui form">
+	    	<div class="field">
+			    <label>Profile Name/Type</label>
+			    <input type="text" name="type" placeholder="Profile Name/Type">
+	    	</div>
+	        <div class="two fields">
+	            <div class="field">
+			      <label>Field</label>
+			      <select class="ui fluid dropdown fieldoptions">
+			      </select>
+			    </div>
+	            <div class="field">
+	            	<label>Information</label>
+	                <input type="text" name="shipping[last-name]" id ="information" placeholder="Information">
+	            </div>
+	        </div>
+	    </form>
+
+	    <button class="ui icon button left" onclick="addAnotherField()"><i class="add circle icon"></i> Add Another Field</button>
+	    </br>
+	    <br/>
+	  	<center>
+	  		<div class='ui red button' id='cancel' onclick="goback()">
+	          <i class='caret left icon'></i>Cancel
+	        </div>
+	  		<div class='ui green button' id='newprofile' onclick="submitProfile()">
+	          Submit Profile<i class='caret right icon'></i>
+	        </div>
+	  	</center>
+    </div>
+</div>
+

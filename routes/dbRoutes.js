@@ -126,7 +126,7 @@ doRetrieve = function(req, res){
     /* add current user in session as attribute to search for in document */
     req.query.username = req.session.user;
   }
-  console.log("type" in req.query);
+  
   mongoModel.retrieve(
     req.params.collection, 
     req.query,
@@ -154,6 +154,10 @@ doRetrieve = function(req, res){
           // console.log("looking for profiles");
           // console.log(modelData[0].content);
           // res.render('results',{obj: modelData});
+        }
+        else if (req.params.collection == "fields") {
+          console.log(modelData[0].field);
+          res.render('getfields', {obj: modelData});
         }
       } 
       // else {

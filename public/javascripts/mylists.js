@@ -63,7 +63,22 @@ function showmodal(type) {
 
 function toggleNewProfile() {
   console.log("toggle new profile form");
+  getFields();
   $('#lists').hide();
   $('#main').hide();
   $('#newProfileForm').show();
+}
+
+// populate fields for adding new profiles
+function getFields() {
+  console.log("getting fields");
+  $.ajax({
+            url: './fields',
+            type: 'GET',
+            data: {},
+            success:function(result) {
+              console.log(result);
+              $('.fieldoptions').html(result);
+            }
+        });
 }
