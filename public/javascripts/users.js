@@ -38,7 +38,7 @@ $(document).ready(function() {
         username: user_name, password: user_password },
       success: function(result) {
         createprofile(user_name, first_name, last_name, user_email);
-        loginfromregistration(user_name, user_password)
+        loginfromregistration(user_name, user_password);
         console.log("Successfully added user to system!");
       }
     });
