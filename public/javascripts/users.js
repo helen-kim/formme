@@ -47,11 +47,6 @@ $(document).ready(function() {
   }
 
   function createprofile(user_name, first_name, last_name, user_email, user_password) {
-    // var first_name = first_name;
-    // var last_name = last_name;
-    // var user_email = user_email;
-    // var user_name = user_name;
-    // var user_password = user_password;
     $.ajax({
       url: './profiles',
       type: 'PUT',
