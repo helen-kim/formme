@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+    <button onclick="fill_form_with_profile('form-1', sample_profile)" id="formme-button">Autofill with FormMe!</button> 
+    <div class="container">  
+      <form class="contact" action="" method="post" id="form-1">
+        <h3>Job Application</h3>
+        <h4>Welcome! Tell us about yourself.</h4>
+        <fieldset>
+          <input placeholder="First name" type="text" id="first_name" tabindex="1" required autofocus>
+        </fieldset>
+        <fieldset>
+          <input placeholder="Last name" type="text" id="last_name" tabindex="1" required autofocus>
+        </fieldset>          
+        <fieldset>
+          <input placeholder="Your Email Address" type="email" id="primary_email" tabindex="2" required>
+        </fieldset>
+        <fieldset>
+          <input placeholder="University Name" id="primary_university" type="tel" tabindex="3" required>
+        </fieldset>
+        <fieldset>
+          <input placeholder="Major" id="primary_university_major" type="tel" tabindex="3" required>
+        </fieldset>
+        <fieldset>
+          <input placeholder="Minor" type="url" tabindex="4" required id="primary_university_minor">
+        </fieldset>
+        <fieldset>
+            Graduation Year:
+          <select id="primary_graduation_year">
+              <option value="2018">2018</option>
+              <option value="2019">2019</option>
+              <option value="2020">2020</option>
+              <option value="2021">2021</option>
+              <option value="2022">2022</option>
+              <option value="2023">2023</option>
+          </select>
+        </fieldset>
+        <fieldset>
+          <textarea placeholder="What was your most recent project?" id="primary_project_summary" tabindex="5" required></textarea>
+        </fieldset>
+        <fieldset>
+          <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+        </fieldset>
+        <p class="copyright">Designed by <a href="https://colorlib.com" target="_blank" title="Colorlib">Colorlib</a></p>
+      </form>
+    </div>
+    <script type="text/javascript">
+        var sample_profile = {
+          'first_name': "John",
+          'last_name': "Doe",
+          'primary_email': "jdoe@gmail.com",
+          'primary_graduation_year': "2020",
+          'primary_project_summary': "My most recent project was a comprehensive, all-in-one solution to the form-filling process. Auto-fill everything, repeat nothing, formMe."
+        };
+        
+        function get_item_tags(form_id) {
+            var elements = document.getElementById(form_id).elements;
+            return elements;
+        }
+        
+        function fill_form_with_profile(form_id, profile) {          
+          var items = get_item_tags(form_id);
+          for (i = 0; i < items.length; i++) {
+            if (items[i].tagName != 'br' && typeof items[i] == 'object') {
+                item_name = items[i].getAttribute("id");
+                if (item_name !== null && item_name in profile) {
+                  document.getElementById(item_name).value = profile[item_name];
+                  document.getElementById(item_name).style.backgroundColor = 'lightblue';
+                }
+            }
+          }
+        }
+        
+    </script>
+    </body>
+</html>
