@@ -10,9 +10,11 @@
 </head>
 
 <body>
-    <div class="header">
-        <% include ./partials/home %>
-    </div>
+    <% if (username != false ) { %>
+        <div class="header">
+            <% include ./partials/home %>
+        </div>
+    <% } %>
     <div class="content" id="home">
         <% if (username == false ) { %>
             <% include ./partials/login %>
@@ -28,13 +30,13 @@
               </a>
             </div>
           </div>
+          <div class="content" id="app">
+            <center>
+                <div id="lists">
+                </div>
+            </center>
+        </div>
         <% } %>
-    </div>
-    <div class="content" id="app">
-        <center>
-            <div id="lists">
-            </div>
-        </center>
     </div>
     <div class="footer">
         <% include ./partials/footer %>

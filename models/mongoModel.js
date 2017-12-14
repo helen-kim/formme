@@ -9,7 +9,8 @@ var bcrypt = require('bcryptjs'); //used for encrypting password
  * This connection_string is for mongodb running locally.
  * Change nameOfMyDb to reflect the name you want for your database
  */
-var connection_string = 'fmadmin:fmsecure1234@ds021731.mlab.com:21731/formme';
+var connection_string = 'fmadmin:fmsecure1234@ds163010.mlab.com:63010/formme';
+
 /*
  * If OPENSHIFT env variables have values, then this app must be running on 
  * OPENSHIFT.  Therefore use the connection info in the OPENSHIFT environment

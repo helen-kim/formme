@@ -22,8 +22,8 @@ body {
 }
 
 #home.content {
-	padding-top: 100px;
-	padding-bottom:10%;   /* Height of the footer element */
+	/*padding-top: 100px;*/
+	/*padding-bottom:10%;    Height of the footer element */
 }
 
 #app.content {
